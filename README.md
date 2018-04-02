@@ -1,3 +1,3 @@
 # Whack-A-Mole
 
-Demo: https://github.com/rmcguinn/Whack-A-Mole
+Demo: https://rmcguinn.github.io/Whack-A-Mole/
