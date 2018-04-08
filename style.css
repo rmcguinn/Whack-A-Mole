@@ -33,10 +33,10 @@ h1 {
 h3 {
   margin: 10px 0 0 0;
   padding: 0;
-  font-size: 5rem;
+  font-size: 4.5rem;
 }
 
-/* The High Score Text Underline */
+/* High Score Text Underline */
 
 u {
   text-decoration: none;
@@ -44,11 +44,34 @@ u {
 }
 
 .highScore {
-  font-size: 5rem;
+  font-size: 4.5rem;
   background:rgba(255, 255, 255, 0.3);
   padding:0 1.5rem;
   line-height:1;
   border-radius:1rem;
+}
+
+.difficulty {
+  font-size: 5rem;
+  font-weight: bold;
+  width: 40%;
+  margin: auto;
+}
+
+/* Removes Bullet Points */
+
+.difficulty ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 67px;
+}
+
+/* Makes List Horizontal */
+
+.difficulty li {
+  display: inline-block;
+  margin: 30px 60px 0px 0px;
 }
 
 /* Used to Center the Button */
@@ -59,11 +82,11 @@ u {
 
 .start-btn {
   padding: 15px 35px;
-  margin-top: 50px;
+  margin-top: 30px;
   font-size: 3.5rem;
   color: #000;
   border-radius: 10px;
-  border: 4px solid #000;
+  border: 3px solid #000;
   background:rgba(255, 255, 255, 0.3);
   cursor: pointer;
   transition: .33s;
@@ -71,7 +94,7 @@ u {
 
 .start-btn:hover {
   color: #fff;
-  border: 4px solid #fff;
+  border: 3px solid #fff;
   transition: .33s ease-out;
   background: #000;
 }

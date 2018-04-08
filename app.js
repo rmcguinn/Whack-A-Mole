@@ -45,10 +45,8 @@ function startGame() {
 function bonk(e) {
     if(!e.isTrusted) return; // Cheat Detection
     score++;
-    // highScore++;
     this.classList.remove('up');
     if (score > highScore) {
-        console.log('working');
         highScore = score;
     }
     scoreBoard.textContent = score;
