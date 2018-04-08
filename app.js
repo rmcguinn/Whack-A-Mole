@@ -6,6 +6,9 @@ let lastHole;
 let timeUp = false;
 let score = 0;
 let highScore = 0;
+let difficulty;
+// let minTime = 0;
+// let maxTime = 0;
 
 function randTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -17,13 +20,38 @@ function randHole(holes) {
     if(hole === lastHole) {
         return randHole(holes);
     }
-
+    
     lastHole = hole;
     return hole;
 }
 
+// Game Difficulty
+
+function easyMode() {
+    difficulty = "easy";
+    console.log('easy');
+}
+
+function mediumMode() {
+    difficulty = "medium";
+    console.log('medium');
+}
+
+function hardMode() {
+    difficulty = "hard";
+    console.log('hard');
+}
+
 function peep() {
-    const time = randTime(200, 1000);
+    if (difficulty === "easy") {
+        time = randTime(800, 1300);
+    } else if (difficulty === "medium") {
+        time = randTime(500, 1100);
+    } else if (difficulty === "hard") {
+        time = randTime(200, 600);
+    } else {
+        time = randTime(500, 1100);
+    }
     const hole = randHole(holes);
     hole.classList.add('up');
     setTimeout(() => {
@@ -32,6 +60,7 @@ function peep() {
     }, time);
 }
 
+
 function startGame() {
     scoreBoard.textContent = 0;
     timeUp = false;
@@ -39,7 +68,7 @@ function startGame() {
     peep();
     setTimeout(() => {
         timeUp = true;
-    }, 10000)
+    }, 15000)
 }
 
 function bonk(e) {

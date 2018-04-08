@@ -74,6 +74,16 @@ u {
   margin: 30px 60px 0px 0px;
 }
 
+.difficulty a {
+  color: #000;
+  text-decoration: none;
+}
+
+.difficulty a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 /* Used to Center the Button */
 
 .start {
