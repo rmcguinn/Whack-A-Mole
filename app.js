@@ -1,10 +1,11 @@
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
+const highScoreBoard = document.querySelector('.highScore');
 const moles = document.querySelectorAll('.mole');
 let lastHole;
 let timeUp = false;
 let score = 0;
-let highscore = 0;
+let highScore = 0;
 
 function randTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -44,8 +45,14 @@ function startGame() {
 function bonk(e) {
     if(!e.isTrusted) return; // Cheat Detection
     score++;
+    // highScore++;
     this.classList.remove('up');
+    if (score > highScore) {
+        console.log('working');
+        highScore = score;
+    }
     scoreBoard.textContent = score;
+    highScoreBoard.textContent = highScore;
 }
 
 moles.forEach(mole => mole.addEventListener('click', bonk));

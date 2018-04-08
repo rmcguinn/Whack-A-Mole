@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
-  background: #ffc600;
+  background: #11d5e7;
 }
 
 *, *:before, *:after {
@@ -24,7 +24,7 @@ h1 {
 }
 
 .score {
-  background:rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.3);
   padding:0 3rem;
   line-height:1;
   border-radius:1rem;
@@ -45,7 +45,7 @@ u {
 
 .highScore {
   font-size: 5rem;
-  background:rgba(255, 255, 255, 0.2);
+  background:rgba(255, 255, 255, 0.3);
   padding:0 1.5rem;
   line-height:1;
   border-radius:1rem;
@@ -64,7 +64,7 @@ u {
   color: #000;
   border-radius: 10px;
   border: 4px solid #000;
-  background: #FFD233;
+  background:rgba(255, 255, 255, 0.3);
   cursor: pointer;
   transition: .33s;
 }
