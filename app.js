@@ -2,13 +2,15 @@ const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const highScoreBoard = document.querySelector('.highScore');
 const moles = document.querySelectorAll('.mole');
+const slapFX = document.querySelector('.slapFX');
+slapFX.preload = 'auto';
+slapFX.load();
+const highScoreFX = document.querySelector('.highScoreFX')
 let lastHole;
 let timeUp = false;
 let score = 0;
 let highScore = 0;
 let difficulty;
-// let minTime = 0;
-// let maxTime = 0;
 
 function randTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -29,17 +31,14 @@ function randHole(holes) {
 
 function easyMode() {
     difficulty = "easy";
-    console.log('easy');
 }
 
 function mediumMode() {
     difficulty = "medium";
-    console.log('medium');
 }
 
 function hardMode() {
     difficulty = "hard";
-    console.log('hard');
 }
 
 function peep() {
@@ -74,9 +73,15 @@ function startGame() {
 function bonk(e) {
     if(!e.isTrusted) return; // Cheat Detection
     score++;
+    const slap2FX = slapFX.cloneNode();
+    slap2FX.play();
+    slap2FX.volume = '.4';
     this.classList.remove('up');
     if (score > highScore) {
         highScore = score;
+        highScoreFX.play();
+        highScoreFX.volume = '.5';
+
     }
     scoreBoard.textContent = score;
     highScoreBoard.textContent = highScore;
