@@ -64,25 +64,36 @@ u {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* Added to center Medium difficulty setting with the start button */
+  /* Added to center Medium difficulty settings with the start button */
   margin-left: 67px;
 }
 
 /* Makes List Horizontal */
 
+/* Transitions on non hover classes are to smooth out on mouse leave */
+
 .difficulty li {
   display: inline-block;
   margin: 30px 60px 0px 0px;
+  transform: scale(1);
+  transition: transform 300ms ease;
+}
+
+.difficulty li:hover {
+  transform: scale(1.2);
+  transition: 300ms ease;
 }
 
 .difficulty a {
   color: #000;
   text-decoration: none;
+  transition: color 200ms ease;
 }
 
 .difficulty a:hover {
   color: #fff;
-  text-decoration: underline;
+  transition: 150ms ease;
+  /* text-decoration: underline; */
 }
 
 /* Used to Center the Button */
@@ -100,13 +111,14 @@ u {
   border: 3px solid #000;
   background:rgba(255, 255, 255, 0.3);
   cursor: pointer;
-  transition: .33s;
+  transition: 300ms;
 }
 
 .start-btn:hover {
   color: #fff;
   border: 3px solid #fff;
-  transition: .33s ease-out;
+  transform: scale(1.15);
+  transition: 300ms ease-out;
   background: #000;
 }
 
@@ -148,4 +160,8 @@ u {
 
 .hole.up .mole {
   top:0;
+}
+
+.medium {
+  color: #fff;
 }

@@ -11,6 +11,9 @@ let timeUp = false;
 let score = 0;
 let highScore = 0;
 let difficulty;
+const easy = document.querySelector('.easy');
+const medium = document.querySelector('.medium');
+const hard = document.querySelector('.hard');
 
 function randTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -31,14 +34,23 @@ function randHole(holes) {
 
 function easyMode() {
     difficulty = "easy";
+    easy.style.color = 'white';
+    medium.style.color = '';
+    hard.style.color = '';
 }
 
 function mediumMode() {
     difficulty = "medium";
+    medium.style.color = 'white';
+    easy.style.color = '';
+    hard.style.color = '';
 }
 
 function hardMode() {
     difficulty = "hard";
+    hard.style.color = 'white';
+    easy.style.color = '';
+    medium.style.color = '';
 }
 
 function peep() {
@@ -49,6 +61,7 @@ function peep() {
     } else if (difficulty === "hard") {
         time = randTime(200, 600);
     } else {
+        difficulty === "medium";
         time = randTime(500, 1100);
     }
     const hole = randHole(holes);
@@ -78,6 +91,7 @@ function bonk(e) {
     slap2FX.volume = '.4';
     this.classList.remove('up');
     if (score > highScore) {
+        // Work in Progess
         highScore = score;
         highScoreFX.play();
         highScoreFX.volume = '.5';
